@@ -1,0 +1,9 @@
+remote_theme: tlg-sde-curriculum/just-the-docs
+
+title: Is it a Perfect Square?
+
+aux_links_new_tab: true
+aux_links:
+  Javadocs: "/api/"
+  Assignment: "https://classroom.github.com/a/VZN7hG2j"
+

@@ -1,0 +1,8 @@
+remote_theme: tlg-sde-curriculum/just-the-docs
+
+title: Is it a Power of Four?
+
+aux_links_new_tab: true
+aux_links:
+  Javadocs: "/api/"
+  Assignment: "https://classroom.github.com/a/YYS8A6wd"

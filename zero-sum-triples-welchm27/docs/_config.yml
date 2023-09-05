@@ -1,0 +1,8 @@
+remote_theme: tlg-sde-curriculum/just-the-docs
+
+title: Zero-Sum Triples
+
+aux_links_new_tab: true
+aux_links:
+  Javadocs: "/api/"
+  Assignment: "https://classroom.github.com/a/TVEcHLVk"

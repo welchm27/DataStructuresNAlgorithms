@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.tlglearning.practice","c":"Power","l":"isPowerOfFour(long)"}]

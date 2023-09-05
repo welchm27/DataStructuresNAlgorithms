@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(project.javaVersion)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: '*.jar')
+
+    testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+
+}
+
+tasks.register('copyTests', Copy) {
+    from zipTree(file("$projectDir/.github/autotest/tests.jar"))
+    into "$buildDir/autotest/"
+}
+
+test {
+    useJUnitPlatform()
+    compileTestJava.enabled = false
+    processTestResources.enabled = false
+    dependsOn classes
+    dependsOn 'copyTests'
+    classpath -= testClassesDirs
+    classpath -= files("$buildDir/resources/test")
+    testClassesDirs = files("$buildDir/autotest")
+    classpath += testClassesDirs
+    testLogging {
+        events 'passed', 'failed', 'skipped'
+    }
+}
